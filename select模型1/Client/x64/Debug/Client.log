@@ -1,0 +1,4 @@
+﻿  mainClient.cpp
+D:\CodePro\CppPro\VS_pro\网络编程网易课程\select模型1\Client\mainClient.cpp(32,33): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  LINK : 没有找到 D:\CodePro\CppPro\VS_pro\网络编程网易课程\select模型1\x64\Debug\Client.exe 或上一个增量链接没有生成它；正在执行完全链接
+  Client.vcxproj -> D:\CodePro\CppPro\VS_pro\网络编程网易课程\select模型1\x64\Debug\Client.exe
