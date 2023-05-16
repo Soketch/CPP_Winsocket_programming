@@ -6,13 +6,13 @@ Socket有三种类型<br/>
 原始套接字(SOCK_RAW)：一种基于IP数据包，运用于高级网络编程，可实现网络监视，攻击等功能。<br/>
 
 ### 目录
-- [1.socket阻塞模型](#1.socket阻塞模型)
-- [2.非阻塞IO模型](#2.非阻塞IO模型)
-- [3.IO复用模型（Select模型）](#3.IO复用模型（Select模型）)
-- [4.异步选择模型（AsyncSelect模型）](#4.异步选择模型（AsyncSelect模型）)
-- [5.事件选择模型（EvnetSelect模型）](#5.事件选择模型（EvnetSelect模型）)
-- [6.重叠IO（overlapped）](#6.重叠IO（overlapped）)
-- [7.完成端口（IOCP）](#7.完成端口（IOCP）)
+- [1.socket阻塞模型](#socket阻塞模型)
+- [2.非阻塞IO模型](#非阻塞IO模型)
+- [3.IO复用模型（Select模型）](#IO复用模型（Select模型）)
+- [4.异步选择模型（AsyncSelect模型）](#异步选择模型（AsyncSelect模型）)
+- [5.事件选择模型（EvnetSelect模型）](#事件选择模型（EvnetSelect模型）)
+- [6.重叠IO（overlapped）](#重叠IO（overlapped）)
+- [7.完成端口（IOCP）](#完成端口（IOCP）)
 
 ### 1.socket阻塞模型
 套接字编程分为阻塞和非阻塞两种IO模式，在Windows和Linux下创建socket默认都是**阻塞模式**。<br/>
