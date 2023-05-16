@@ -5,13 +5,13 @@ Socket有三种类型<br/>
 数据报套接字（DATAGRAM）：一种基于UDP的，无连接的，对应于无连接的UDP服务应用。不安全，不过效率高。<br/>
 原始套接字(SOCK_RAW)：一种基于IP数据包，运用于高级网络编程，可实现网络监视，攻击等功能。<br/>
 
-* [1.socket阻塞模型](###1-socket阻塞模型)
-* [2.非阻塞IO模型](#2-非阻塞IO模型)
-* [3.IO复用模型（Select模型）](#3-IO复用模型（Select模型）)
-* [4.异步选择模型（AsyncSelect模型）](#4-异步选择模型（AsyncSelect模型）)
-* [5.事件选择模型（EvnetSelect模型）](#5-事件选择模型（EvnetSelect模型）)
-* [6.重叠IO（overlapped）](#6-重叠IO（overlapped）)
-* [7.完成端口（IOCP）](#7-完成端口（IOCP）)
+* [1.socket阻塞模型](###1.socket阻塞模型)
+* [2.非阻塞IO模型](###2.非阻塞IO模型)
+* [3.IO复用模型（Select模型）](###3-IO复用模型（Select模型）)
+* [4.异步选择模型（AsyncSelect模型）](###4-异步选择模型（AsyncSelect模型）)
+* [5.事件选择模型（EvnetSelect模型）](###5-事件选择模型（EvnetSelect模型）)
+* [6.重叠IO（overlapped）](###6-重叠IO（overlapped）)
+* [7.完成端口（IOCP）](###7-完成端口（IOCP）)
 
 ### 1.socket阻塞模型
 套接字编程分为阻塞和非阻塞两种IO模式，在Windows和Linux下创建socket默认都是**阻塞模式**。<br/>
