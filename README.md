@@ -94,4 +94,36 @@ AsyncSelect模型的优点是可以在基于消息的Windows环境下开发应�
        有信号则分类处理 -- 列举事件 WSAEnumNetworkEvents()
        
 ### 6.重叠IO（overlapped）
+重叠IO有两种实现方式   &emsp;&emsp;&emsp; 1）事件通知   <br/>
+ &emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 2）完成例程 <br/>
+这里介绍三个函数WSARecv ,  WSASend, AceeptEx 都是异步操作<br/>
+注意WSAAccept并不是异步的，是同步。
+WSARecv函数
+```
+int Res = WSARecv(
+		allSock[index],  //客户端socket
+		&wsaBuf,  //接收后信息存储的buffer
+		1,  //buffer个数
+		&dwRecvCount, // 接收字节数
+		&dwFlag,//行为标志指针
+		&allOLP[index], //重叠结构
+		NULL  //回调函数
+		);
+```
+WSASend()参数类似
+<br/>
+<br/>
+AcceptEx函数
+```
+BOOL bRes = AcceptEx(
+		allSock[0],   //服务端监听Slisten套接字
+		allSock[g_count], //链接服务端的客户端socket套接字
+		str,  //缓冲区指针  无效不使用也不能设置null
+		0,  //缓冲区大小   设置0 取消缓冲区接收
+		sizeof(sockaddr_in) + 16, //本地 地址信息保留字节数，不能为零
+		sizeof(sockaddr_in) + 16, //远端 地址信息保留字节数，不能为零
+		&dwRecvCount,  //接收客户端信息字节数
+		&allOLP[0]  //重叠结构 --> sListen对应的重叠结构  --> 第一个 -- 下标0
+	);
+```
 ### 7.完成端口（IOCP）
