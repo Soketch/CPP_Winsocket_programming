@@ -1,0 +1,3 @@
+﻿  mainClient.cpp
+D:\CodePro\CppPro\VS_pro\网络编程网易课程\重叠IO\Client\mainClient.cpp(30,30): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+  Client.vcxproj -> D:\CodePro\CppPro\VS_pro\网络编程网易课程\重叠IO\x64\Debug\Client.exe

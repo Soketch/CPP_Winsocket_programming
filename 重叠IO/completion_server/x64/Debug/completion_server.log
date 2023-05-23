@@ -1,0 +1,4 @@
+﻿  completion.cpp
+D:\CodePro\CppPro\VS_pro\网络编程网易课程\重叠IO\completion_server\completion.cpp(287,12): warning C4244: “初始化”: 从“__int64”转换到“int”，可能丢失数据
+D:\CodePro\CppPro\VS_pro\网络编程网易课程\重叠IO\completion_server\completion.cpp(238): warning C4715: “PostRecv”: 不是所有的控件路径都返回值
+  completion_server.vcxproj -> D:\CodePro\CppPro\VS_pro\网络编程网易课程\重叠IO\x64\Debug\completion_server.exe
