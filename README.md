@@ -95,9 +95,9 @@ AsyncSelect模型的优点是可以在基于消息的Windows环境下开发应�
        
 ### 6.重叠IO（overlapped）
 重叠IO有两种实现方式   &emsp;&emsp;&emsp; 1）事件通知   <br/>
- &emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 2）完成例程 <br/>
+ &emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 2）完成例程 -- 完成例程主要就是WSARecv/WSASend中采用回调函数提高性能<br/>
 这里介绍三个函数WSARecv ,  WSASend, AceeptEx 都是异步操作<br/>
-注意WSAAccept并不是异步的，是同步。
+注意WSAAccept并不是异步的，是同步。<br/>
 WSARecv函数
 ```
 int Res = WSARecv(
