@@ -1,0 +1,6 @@
+﻿  mainServer.cpp
+D:\CodePro\CppPro\VS_pro\网络编程网易课程\完成端口IOCP\Server_IOCP\mainServer.cpp(55,26): warning C4244: “参数”: 从“DWORD”转换到“WORD”，可能丢失数据
+D:\CodePro\CppPro\VS_pro\网络编程网易课程\完成端口IOCP\Server_IOCP\mainServer.cpp(80,28): warning C4996: 'inet_addr': Use inet_pton() or InetPton() instead or define _WINSOCK_DEPRECATED_NO_WARNINGS to disable deprecated API warnings
+D:\CodePro\CppPro\VS_pro\网络编程网易课程\完成端口IOCP\Server_IOCP\mainServer.cpp(331,15): warning C4244: “参数”: 从“unsigned __int64”转换到“int”，可能丢失数据
+D:\CodePro\CppPro\VS_pro\网络编程网易课程\完成端口IOCP\Server_IOCP\mainServer.cpp(276): warning C4700: 使用了未初始化的局部变量“index”
+  Server_IOCP.vcxproj -> D:\CodePro\CppPro\VS_pro\网络编程网易课程\完成端口IOCP\x64\Debug\Server_IOCP.exe
