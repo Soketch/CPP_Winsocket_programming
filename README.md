@@ -1,10 +1,11 @@
 # CPP_socket_programming
 ## windows网络编程模型
+socketAPI: 本质是对传输层协议的一种封装，便于应用层的使用。<br/>
 Socket有三种类型<br/>
-流式套接字（STREAM）：一种基于TCP协议，面向连接的，可靠的，针对于面向连接的TCP服务应用，安全，但是效率低.<br/>
-数据报套接字（DATAGRAM）：一种基于UDP的，无连接的，对应于无连接的UDP服务应用。不安全，不过效率高。<br/>
+流式套接字（STREAM）：一种基于TCP协议，面向连接的，可靠的，针对于面向连接的TCP服务应用（邮件等），安全，但是效率低。<br/>
+数据报套接字（DATAGRAM）：一种基于UDP的，无连接的，对应于无连接的UDP服务应用（视频等）。不安全，不过效率高。<br/>
 原始套接字(SOCK_RAW)：一种基于IP数据包，运用于高级网络编程，可实现网络监视，攻击等功能。<br/>
-
+socket有四种状态：未连接unconnected， 连接connected， 监听listen， 关闭close <br/>
 ### 目录
 - [1.socket阻塞模型](#socket阻塞模型)
 - [2.非阻塞IO模型](#非阻塞IO模型)
