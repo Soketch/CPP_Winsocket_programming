@@ -138,3 +138,39 @@ BOOL bFlag = WSAGetOverlappedResult(
 	);
 ```
 ### 7.完成端口（IOCP）
+完成端口iocp实现是指使用Windows操作系统提供的一种高性能、可扩展的异步I/O模型来实现网络编程或其他I/O操作的方法。<br/>
+基于事件驱动，可以大幅提升I/O操作的效率和并发量，尤其适合处理大量连接和大量数据流的场景。<br/>
+<br/>
+* 初始化完成端口和工作线程
+* 创建Socket，并绑定到完成端口上，监听消息连接
+* 接受并监听数据
+* 处理已完成的I/O请求和相关的业务逻辑
+```
+// 定义重叠结构体
+typedef struct _PER_IO_OPERATION_DATA {
+ WSAOVERLAPPED Overlapped;
+ WSABUF DataBuf;
+ CHAR Buffer [MAX_BUFF_SIZE];
+ DWORD BytesSend;
+ DWORD BytesRecv;
+} PER_IO_OPERATION_DATA, * LPPER_IO_OPERATION_DATA;
+```
+```
+ // 创建IOCP句柄
+ HANDLE iocpHandle = CreateIoCompletionPort (INVALID_HANDLE_VALUE, NULL, 0, 0);
+ if (iocpHandle == NULL) {
+  std::cout << "CreateIoCompletionPort failed: " << GetLastError () << std::endl;
+  closesocket (listenSocket);
+  WSACleanup ();
+  return 1;
+ }
+ // 将监听socket关联到IOCP上
+ if (CreateIoCompletionPort ( (HANDLE)listenSocket, iocpHandle, 0, 0) == NULL) {
+  std::cout << "CreateIoCompletionPort failed: " << GetLastError () << std::endl;
+  CloseHandle (iocpHandle);
+  closesocket (listenSocket);
+  WSACleanup ();
+  return 1;
+ }
+```
+
