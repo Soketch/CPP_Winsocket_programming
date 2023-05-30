@@ -95,6 +95,7 @@ AsyncSelect模型的优点是可以在基于消息的Windows环境下开发应�
        有信号则分类处理 -- 列举事件 WSAEnumNetworkEvents()
        
 ### 6.重叠IO（overlapped）
+重叠IO是指同一线程内部向多个目标传输（或从多个目标接收）数据引起的I/O重叠现象<br/>
 重叠IO有两种实现方式   &emsp;&emsp;&emsp; 1）事件通知   <br/>
  &emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; 2）完成例程 -- 完成例程主要就是WSARecv/WSASend中采用回调函数提高性能<br/>
 这里介绍三个异步操作函数WSARecv ,  WSASend, AceeptEx<br/>
@@ -138,7 +139,7 @@ BOOL bFlag = WSAGetOverlappedResult(
 	);
 ```
 ### 7.完成端口（IOCP）
-完成端口iocp实现是指使用Windows操作系统提供的一种高性能、可扩展的异步I/O模型来实现网络编程或其他I/O操作的方法。<br/>
+完成端口iocp是指使用Windows操作系统提供的一种高性能、可扩展的异步I/O模型来实现网络编程或其他I/O操作的方法。是目前Windows下最好的模型，性能对等Linux下的epoll模型<br/>
 基于事件驱动，可以大幅提升I/O操作的效率和并发量，尤其适合处理大量连接和大量数据流的场景。<br/>
 <br/>
 * 初始化完成端口和工作线程
